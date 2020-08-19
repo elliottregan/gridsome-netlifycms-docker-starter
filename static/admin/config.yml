@@ -23,3 +23,23 @@ collections:
       - {label: "Cover Image", name: "cover_image", widget: "image", required: false}
       - {label: "Description", name: "description", widget: "markdown"}
       - {label: "Body", name: "body", widget: "markdown"}
+
+  - name: "locations" # Used in routes, e.g., /admin/collections/blog
+    label: "Locations" # Used in the UI
+    media_folder: '/static/images/uploads'
+    public_folder: '../../static/images/uploads'
+    folder: "content/locations" # The path to the folder where the documents are stored
+    create: true # Allow users to create new documents in this collection
+    slug: "{{slug}}" # Filename template, e.g., YYYY-MM-DD-title.md
+    extension: 'md'
+    fields: # The fields for each document, usually in front matter
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Date", name: "date", widget: "datetime"}
+      - {label: "Published", name: "published", widget: "boolean", default: true}
+      - label: "Tags"
+        name: "tags"
+        widget: "list"
+        field: {label: Name, name: name, widget: string, default: "tag"}
+      - {label: "Cover Image", name: "cover_image", widget: "image", required: false}
+      - {label: "Description", name: "description", widget: "markdown"}
+      - {label: "Body", name: "body", widget: "markdown"}
